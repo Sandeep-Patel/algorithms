@@ -22,9 +22,13 @@ public class ListNode {
      * @return
      */
     public static ListNode createLinkedList(List<Integer> list) {
+        if(list == null || list.isEmpty()) {
+            printList(null);
+            return null;
+        }
         int count = list.size()-1;
         ListNode tail = new ListNode(list.get(count--));
-        ListNode head = null;
+        ListNode head = tail;
         while(count >= 0 ) {
             int val = list.get(count);
             head = new ListNode(val, tail);
